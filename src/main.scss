@@ -1,7 +1,8 @@
 $primary: #00a99d;
+$secondary: #929292;
+$gray: #dedede;
 $dark: #383838;
 $danger: purple;
-$font-family-base: "Raleway", sans-serif;
 @import "~bootstrap/scss/bootstrap";
 
 /**
@@ -114,13 +115,14 @@ $font-family-base: "Raleway", sans-serif;
 # Footer
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #444444;
 }
 a {
-  color: $primary;
+  color: $secondary;
+  font-size: 13px;
   &:hover {
-    color: #ffa790;
+    color: $primary;
     text-decoration: none;
   }
 }
@@ -146,6 +148,26 @@ h6 {
   text-transform: uppercase;
   font-weight: 700;
   font-size: 14px;
+}
+.deco-line:before {
+  content: "";
+  display: inline-flex;
+  border-top: medium double;
+  width: 14%;
+  height: 1px;
+  position: relative;
+  top: -0.3em;
+  color: #c0c0c0;
+}
+.deco-line:after {
+  content: "";
+  display: inline-flex;
+  border-top: medium double;
+  width: 14%;
+  height: 1px;
+  position: relative;
+  bottom: 0.3em;
+  color: #c0c0c0;
 }
 #preloader {
   position: fixed;
@@ -472,6 +494,12 @@ h6 {
   position: relative;
   margin-bottom: -72px;
   overflow-x: hidden;
+  .deco-line:before {
+    color: #fff;
+  }
+  .deco-line:after {
+    color: #fff;
+  }
   .hero-container {
     position: absolute;
     bottom: 0;
@@ -494,12 +522,11 @@ h6 {
   }
   h2 {
     color: $dark;
-    margin: 15px 0;
     font-size: 20px;
     text-transform: uppercase;
   }
   h3 {
-    font-size: 35px;
+    font-size: 30px;
     text-transform: uppercase;
     font-weight: 700;
   }
@@ -531,7 +558,7 @@ section {
   padding-bottom: 30px;
   h2 {
     text-transform: uppercase;
-    font-size: 32px;
+    font-size: 25px;
     font-weight: 700;
     position: relative;
   }
@@ -601,9 +628,19 @@ section {
   .counters {
     span {
       font-weight: 700;
-      font-size: 38px;
-      display: block;
+      font-size: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       color: #fff;
+      height: 100px;
+      width: 100px;
+      border-radius: 50%;
+      border: 3px solid #00a99d;
+      margin: 10px auto;
+    }
+    small {
+      font-size: 50%;
     }
     p {
       font-weight: 700;
@@ -701,15 +738,15 @@ section {
   }
   .carousel-control-next {
     opacity: 1;
-    width: auto;
+    width: 10px;
   }
   .carousel-control-prev {
     opacity: 1;
-    width: auto;
+    width: 10px;
   }
   .btn-carousel {
     opacity: 1;
-    padding: 5px 10px;
+    padding: 5px 14px;
     &:hover {
       color: #fff;
       background-color: $primary;
@@ -733,15 +770,27 @@ section {
         color: #fff;
         border-color: $primary;
       }
+      .rounded-circle {
+        background-color: $primary;
+      }
     }
     .btn {
       font-size: 10px;
     }
   }
+  i {
+    color: red;
+  }
+  .rounded-circle {
+    background-color: $dark;
+    height: 80px;
+    width: 80px;
+    margin: 0 auto 20px auto;
+  }
   .title {
     font-weight: 700;
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 15px;
     a {
       color: #111;
     }
@@ -767,8 +816,8 @@ section {
   }
   .title {
     font-weight: 700;
-
-    font-size: 18px;
+    font-size: 14px;
+    text-transform: uppercase;
     a {
       color: #111;
     }
@@ -834,25 +883,6 @@ section {
       z-index: 1;
     }
   }
-  .owl-nav {
-    margin-top: 5px;
-    text-align: center;
-  }
-  .owl-dots {
-    margin-top: 5px;
-    text-align: center;
-  }
-  .owl-dot {
-    display: inline-block;
-    margin: 0 5px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ddd !important;
-  }
-  .owl-dot.active {
-    background-color: $primary !important;
-  }
 }
 
 .cta {
@@ -867,10 +897,7 @@ section {
 }
 
 .btn-carousel {
-  font-family: "Raleway", sans-serif;
-  font-weight: 700;
-  font-size: 14px;
-  letter-spacing: 1px;
+  padding: 5px 14px;
   display: inline-block;
   border-radius: 4px;
   transition: 0.5s;
@@ -883,7 +910,19 @@ section {
     color: #fff;
   }
 }
-
+.seperator {
+  position: relative;
+  top: 20px;
+  width: fit-content;
+  left: 50%;
+  padding: 10px;
+  margin: 0;
+  border-radius: 4px;
+  transform: rotate(45deg);
+  svg {
+    transform: rotate(-45deg);
+  }
+}
 .portfolio {
   .portfolio-flters {
     list-style: none;
@@ -1020,9 +1059,13 @@ section {
         display: inline-block;
         transition: ease-in-out 0.3s;
         transform: rotate(45deg);
-        color: #fff;
+        color: $primary;
         &:hover {
           background: $dark;
+          color: #fff;
+        }
+        svg {
+          transform: rotate(-45deg);
         }
       }
       i {
@@ -1053,10 +1096,9 @@ section {
         color: #aaaaaa;
       }
       p {
-        font-style: italic;
         font-size: 14px;
         line-height: 26px;
-        color: #777777;
+        color: #5f5f5f;
         &::after {
           content: "";
           position: relative;

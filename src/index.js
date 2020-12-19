@@ -1,3 +1,7 @@
+import "@fortawesome/fontawesome-free/js/fontawesome";
+import "@fortawesome/fontawesome-free/js/solid";
+import "@fortawesome/fontawesome-free/js/regular";
+import "@fortawesome/fontawesome-free/js/brands";
 import { run } from "./app/app";
 import "./main.scss";
 import { AlertService } from "./app/alert.service";

@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.1",
     "bootstrap": "^4.5.3",
     "css-loader": "^2.1.0",
     "file-loader": "^3.0.1",
