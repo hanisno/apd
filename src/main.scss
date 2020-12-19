@@ -153,17 +153,12 @@ h6 {
     }
   }
 }
-#header.header-scrolled {
-  background: rgba(21, 5, 23, 0.85);
-}
-#header.header-inner-pages {
-  background: rgba(21, 5, 23, 0.85);
-}
 .is-sticky {
   z-index: 997;
   position: relative;
 }
-.nav-menu {
+
+.navbar {
   ul {
     margin: 0;
     padding: 0;
@@ -216,6 +211,20 @@ h6 {
       transition: 0.5s;
       display: inline-block;
     }
+  }
+
+  .navbar-default {
+    background-color: $secondary;
+    color: red;
+  }
+
+  .navbar-toggler-icon {
+    display: inline;
+    color: $secondary;
+  }
+
+  .custom-toggler {
+    border: 1px solid $secondary;
   }
 
   .drop-down {
